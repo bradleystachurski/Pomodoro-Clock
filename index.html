@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Clock</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS for this sheet-->
+    <link rel="stylesheet" href="pomodoro.css">
+
+
+</head>
+<body>
+    <!--<div class="container">
+        <div id="loader">
+            <div id="top"></div>
+            <div id="bottom"></div>
+            <div id="line"></div>
+        </div>
+
+        <div class="progress-pie-chart" data-percent="10">
+            <div class="ppc-progress">
+                <div class="ppc-progress-fill"></div>
+            </div>
+            <div class="ppc-percents">
+                <div class="pcc-percents-wrapper">
+                    <span>%</span>
+                </div>
+            </div>
+        </div>
+
+        &lt;!&ndash;
+        SVG Radial
+        &ndash;&gt;
+
+        <svg class="progress-radial" width="400px" height="400px" viewBox="0 0 100 100" shape-rendering="geometricPrecision">
+            <defs>
+                &lt;!&ndash; In production make sure the mask id is discrete if you plan on using multiple instances on one page &ndash;&gt;
+                <mask id="circle_mask" x="0" y="0" width="100" height="100" maskUnits="userSpaceOnUse">
+                    &lt;!&ndash; The outer shape hides everything outside of the circle
+                         This is necessary because the path used to create the bar does not perfectly
+                         match the shape of a circle. We render the path larger than needed and mask it's edges
+                         to create a perfect circle. &ndash;&gt;
+                    <circle cx="50" cy="50" r="51" stroke-width="0" fill="black" opacity="1"/>
+
+                    &lt;!&ndash; The middle shape defines the visible area &ndash;&gt;
+                    <circle cx="50" cy="50" r="50" stroke-width="0" fill="white" opacity="1"/>
+
+                    &lt;!&ndash; The inner shape creates the hole in the center.
+                         The value `r` defines the radius of the hole. &ndash;&gt;
+                    <circle class="progress-radial-mask-inner" cx="50" cy="50" r="45" stroke-width="0" fill="black" opacity="1"/>
+                </mask>
+            </defs>
+            <g mask="url(#circle_mask)">
+                <circle class="progress-radial-track" cx="50" cy="50" r="50" stroke-width="0" opacity="1"/>
+                <path class="progress-radial-bar" transform="translate(50, 50)"
+                      d="M 0 0">
+                </path>
+            </g>
+        </svg>
+
+        <div class="container">
+            <div class="title-wrapper section">
+                <h1>Pomodoro Clock</h1>
+                <h4>Simple and lightweight JavaScript Pomodoro Timer</h4>
+            </div>
+        </div>
+            <div class="demo-wrapper section">
+                <div class="input">
+                    <label for="time-input">Select time and hit "play"</label>
+                    <input name="time-input" type="text" class="time-input" value="20" autofocus/>
+                </div>
+                <div class="buttons">
+                    <button class="button play  fontawesome-play"></button>
+                    <button class="button pause fontawesome-pause"></button>
+                    <button class="button stop  fontawesome-stop"></button>
+                </div>
+                <div class="timerMinutes">&nbsp;</div>
+                <div class="timerSeconds">&nbsp;</div>
+            </div>
+        </div>
+
+
+    </div>-->
+
+    <div class="container">
+        <svg class="progress-radial" width="400px" height="400px" viewBox="0 0 100 100" shape-rendering="geometricPrecision">
+            <defs>
+                &lt;!&ndash; In production make sure the mask id is discrete if you plan on using multiple instances on one page &ndash;&gt;
+                <mask id="circle_mask" x="0" y="0" width="100" height="100" maskUnits="userSpaceOnUse">
+                    &lt;!&ndash; The outer shape hides everything outside of the circle
+                    This is necessary because the path used to create the bar does not perfectly
+                    match the shape of a circle. We render the path larger than needed and mask it's edges
+                    to create a perfect circle. &ndash;&gt;
+                    <circle cx="50" cy="50" r="51" stroke-width="0" fill="black" opacity="1"/>
+
+                    &lt;!&ndash; The middle shape defines the visible area &ndash;&gt;
+                    <circle cx="50" cy="50" r="50" stroke-width="0" fill="white" opacity="1"/>
+
+                    &lt;!&ndash; The inner shape creates the hole in the center.
+                    The value `r` defines the radius of the hole. &ndash;&gt;
+                    <circle class="progress-radial-mask-inner" cx="50" cy="50" r="49 " stroke-width="0" fill="black" opacity="1"/>
+                </mask>
+            </defs>
+            <g mask="url(#circle_mask)">
+                <circle class="progress-radial-track" cx="50" cy="50" r="50" stroke-width="0" opacity="1"/>
+                <path class="progress-radial-bar" transform="translate(50, 50)"
+                      d="M 0 0">
+                </path>
+            </g>
+            <!--<foreignObject x="0" y="0">
+                <div class="demo-wrapper section" xmlns="http://www.w3.org/1999/xhtml">
+                    <div class="timerMinutes">&nbsp;</div>
+                    <div class="timerSeconds">&nbsp;</div>
+                </div>
+            </foreignObject>-->
+        </svg>
+    </div>
+
+
+    <div class="container">
+        <div id="loader">
+            <div id="top"></div>
+            <div id="bottom"></div>
+            <div id="line"></div>
+        </div>
+
+        <div class="progress-pie-chart" data-percent="10">
+            <div class="ppc-progress">
+                <div class="ppc-progress-fill"></div>
+            </div>
+            <div class="ppc-percents">
+                <div class="pcc-percents-wrapper">
+                    <span>%</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <div class="title-wrapper section">
+                <h1>Pomodoro Clock</h1>
+                <h4>Simple and lightweight JavaScript Pomodoro Timer</h4>
+            </div>
+        </div>
+        <div class="demo-wrapper section">
+            <div class="input">
+                <label for="time-input">Select time and hit "play"</label>
+                <input name="time-input" type="text" class="time-input" value="20" autofocus/>
+            </div>
+            <div class="buttons">
+                <button class="button play  fontawesome-play"></button>
+                <button class="button pause fontawesome-pause"></button>
+                <button class="button stop  fontawesome-stop"></button>
+            </div>
+            <div class="timerMinutes">&nbsp;</div>
+            <div class="timerSeconds">&nbsp;</div>
+        </div>
+    </div>
+
+
+
+    </div>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="pomodoro.js"></script>
+        <script type="text/javascript" src="timer.js"></script>
+    <script type="text/javascript" src="progress.js"></script>
+
+</body>
+</html>
